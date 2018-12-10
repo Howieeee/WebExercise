@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Get comic automatically</title>  
+      <script>
+        var URL;
+ 		var firstPageNum;
+        var lastPageNum;
+        URL = window.prompt("Please input URL:");
+		firstPageNum = window.prompt("Please input first page number:");
+        lastPageNum = window.prompt("Please input last page number:");
+   
+		
+		var page = parseInt(firstPageNum);
+		var count = parseInt(lastPageNum);
+		
+		
+		while(page <=count){
+			var url;
+			var strLen = URL.length;
+			if(page <10 ){
+				url = "<img src="+"\""+URL+"\/00"+page+".jpg"+"\">";
+				
+			}else if (page < 100){
+				url = "<img src="+"\""+URL+"\/0"+page+".jpg"+"\">";
+			}else{
+				url = "<img src="+"\""+URL+"\/"+page+".jpg"+"\">";
+			}
+			
+			document.writeln(url);
+			
+			page = page +1;
+		}
+ 
+    
+
+      </script>
+   </head><body>
+   
+   </body>
+</html>
