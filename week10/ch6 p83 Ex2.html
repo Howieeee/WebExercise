@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>
+        Nested For Loop 
+      </title>
+      <script>
+	    var width;
+		width = window.prompt("Please input width:(odd number)");
+		while(width %2 ==0){
+			window.alert("Please input odd number");
+			width = window.prompt("Please input width:(odd number)");
+		}
+		//document.write(width);
+		var input = parseInt(width);
+		var judge = (input+1)/2;
+		var w = input * 50;
+		//document.writeln(judge);
+		document.writeln( "<table border=1" +" width="+ w +"px height="+w+"px>");
+		
+		
+		for(var i=1;i<=width;i++){
+			document.writeln("<tr>");
+			for(var j=1;j<=width;j++){
+				if(i<judge){
+					if(j>judge-1*i && j<judge+1*i)
+					document.writeln("<td style=\"background-color:crimson;\"></td>");
+					else
+					document.writeln("<td style=\"background-color:royalblue;\"></td>");
+				}
+				else if(i==judge)
+					document.writeln("<td style=\"background-color:crimson;\"></td>");
+				else if(i>judge){
+					if(j>judge-2 && j<judge+2)
+					document.writeln("<td style=\"background-color:crimson;\"></td>");
+				else
+					document.writeln("<td style=\"background-color:royalblue;\"></td>");
+				}
+			}
+			document.writeln("</tr>");
+		}
+		
+		
+		document.writeln( "</table>" );
+   
+      </script>  
+   </head><body></body>
+</html>

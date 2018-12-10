@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>學伴通</title>  
+      <script>
+        var startID;
+ 		var EndID;
+		var command;
+        startID = window.prompt("Please input student id(from):");
+		EndID = window.prompt("Please input student id(to):");
+   
+		
+		var start = parseInt(startID);
+		var end = parseInt(EndID);
+		
+		var count = end - start;
+		document.writeln( "<table border=1");
+		for (var i=start;i<=end;i++){
+			document.writeln('<tr>');
+			document.writeln('<td>'+i+'</td>'+'<td><img src="https://portalx.yzu.edu.tw/PortalSocialVB/Include/ShowImage.aspx?ShowType=UserPic&UserAccount=s'+i+'&UserPictureName=" height="120" width="93"></td>');
+			document.writeln('</tr>')
+		
+		}
+
+      </script>
+   </head><body>
+   
+   </body>
+</html>

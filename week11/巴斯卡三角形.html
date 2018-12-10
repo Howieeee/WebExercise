@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>巴斯卡三角形</title>
+      <style type = "text/css">
+    ol { margin: 0; }
+    li { margin-right: 1em; display: inline; }
+      </style>   
+	  
+      <script>
+	  var num = window.prompt("Please input a number");
+	  function start(){
+			
+			var arr = new Array();
+			for (var i =0 ;i<num;i++)
+			{	
+				arr[i]= new Array(i+1);
+				for(var j=0;j<arr[i].length;j++){
+					if(j==0 || j== arr[i].length-1 )
+						arr[i][j]=1;
+					else if(i>1){
+						arr[i][j] = arr[i-1][j-1]+arr[i-1][j];
+					}
+				}
+			}
+			var Output = document.getElementById("output");
+			outputArray(arr,Output);
+		}
+		
+		
+		function outputArray(arr,Output){
+			var result = "";
+		
+			for(var i=0;i<num;i++){
+				result += "<ol>";
+				for(var j=0;j<arr[i].length;j++){
+					result += "<li>"+ arr[i][j] + "</li>";		
+				}
+				result += "</ol>";
+			}
+			Output.innerHTML = result;
+		}
+	  window.addEventListener("load",start,false);
+	  
+   </script>
+   </head>
+   <body>
+      <h1>巴斯卡三角形</h1>
+	  <div id = "output"></div>
+   </body>
+</html>
